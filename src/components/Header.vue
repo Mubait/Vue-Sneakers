@@ -7,13 +7,18 @@
 
 <template>
   <header class="flex justify-between border-b border-slate-200 px-10 py-8">
-    <div class="flex items-center gap-4">
-      <img src="/logo.png" alt="Logo" class="w-10" />
-      <div>
-        <h2 class="text-xl font-bold uppercase"> Vue Sneakers</h2>
-        <p class="text-slate-500">Магазин лучших кроссовок</p>
+
+    <RouterLink to="/">
+      <div class="flex items-center gap-4">
+        <img src="/logo.png" alt="Logo" class="w-10" />
+        <div>
+          <h2 class="text-xl font-bold uppercase"> Vue Sneakers</h2>
+          <p class="text-slate-500">Магазин лучших кроссовок</p>
+        </div>
       </div>
-    </div>
+    </RouterLink>
+    
+
 
     <ul class="flex items-center gap-10">
       <li @click="() => emit('openDrawer')" class="flex items-center gap-3 text-gray-500 hover:text-black cursor-pointer">
@@ -21,10 +26,13 @@
         <b>{{ totalPrice }} руб.</b>
       </li>
 
-      <li class="flex items-center gap-3 text-gray-500 hover:text-black">
-        <img src="/heart.svg" alt="heart" />
-        <span>Закладки</span>
-      </li>
+      
+      <RouterLink to="/favorites">
+        <li class="flex items-center gap-3 text-gray-500 hover:text-black">
+          <img src="/heart.svg" alt="heart" />
+          <span>Закладки</span>
+        </li>
+      </RouterLink>
 
       <li class="flex items-center gap-3 text-gray-500 hover:text-black">
         <img src="/profile.svg" alt="profile" />
